@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Coversor R$ US$ </title>
+    <style>
+        h1{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        button{
+            font: normal 12pt Arial;
+            height: 68px;
+            width: 120px;
+        }
+        div#mon{
+            font: normal 15pt Arial;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conversor R$  US$</h1>
+    <button type="button" onclick="Conversao()">Converter</button>
+    <div id="mon">Clique co botão acima para começar</div>
+
+    <script>
+        var co = Number.parseFloat(window.prompt("Antes de mais nada. Quanto esta a cotação do dollar agora?"))
+        function Conversao(){
+            var con = window.document.getElementById('mon')
+            var ta = Number.parseFloat(window.prompt("Quantos R$ você tem na carteira?"))
+            var paragrafo = document.createElement("p")
+            mon.innerHTML = `A sua <strong>economia</strong> de ${ta} R$ (Reais) convertido para US$ equivale a...`
+            var u = ta / co
+            paragrafo.innerHTML = `${u} (Dolares)`
+            con.append(paragrafo)
+        }
+    </script>
+</body>
+</html>

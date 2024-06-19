@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Conversor de medidas</title>
+    <style>
+        h1{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        button{
+            font: normal 12pt Arial;
+            height: 68px;
+            width: 120px;
+        }
+        div#conv{
+            font: normal 15pt Arial;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conversor de medidas</h1>
+    <button type="button" onclick="conversao()">Converter</button>
+    <div id="conv">Clique no botão acima para iniciar.C</div>
+
+
+    <script>
+        function conversao(){
+            var di = window.document.getElementById('conv')
+            var m = Number.parseFloat(window.prompt('Digite uma distância em metros(m)'))
+            di.innerHTML = `<strong>A distância de ${m} metros, corresponde a...</strong>`
+            var paragrafo = document.createElement("p");
+            var km = m/1000
+            var hm = m/100
+            var dam = m/10
+            var dm = m*10
+            var cm = m*100
+            var mm = m*1000
+            paragrafo.innerHTML = `${km} quilômetros (Km) <br/><br/> ${hm} hectômetros (Hm) <br/><br/> ${dam} decâmetros (dam) <br/><br/> ${dm} decímetros (dm) <br/><br/> ${cm} centímetros (cm) <br/><br/> ${mm} milímetros (mm) <br/><br/>`
+            di.append(paragrafo)
+            /*document.writeln(`${km} quilômetros (Km) <br/>`)
+            document.writeln(`${hm} hectômetros (Hm) <br/>`)
+            document.writeln(`${dam} decâmetros (dam) <br/>`)
+            document.writeln(`${dm} decímetros (dm) <br/>`)
+            document.writeln(`${cm} centímetros (cm) <br/>`)
+            document.writeln(`${mm} milímetros (mm) <br/>`) não funciona como esperado*/
+        }
+    </script>
+</body>
+</html>
